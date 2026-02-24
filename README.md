@@ -54,27 +54,3 @@ While waiting for the special conectors to arrive from China, I had bought the c
 By looking at the signals from the bought EVSE on my oscilloscope, I thought mine probably needed the CP to be held at 12V+ for an initiual period before startinng the 1kHz square wave. As I used a dual op-amp chip, I could use the spare to hold the 555 in reset until a capacitor charged through a resistor, giving a couple of seconds delay. This worked perfectly.  
 
 
-
-
-
-
-
-
-
-
-
-
-Arduino shield for DIY dynos, engine monitoring &amp; more.  
-Designed for monitoring & logging key aspects of an internal combustion engine for the purpose of R&D for my own Engine Management system. 
-Aims to be the natural successor for the "Ardyno" shield https://ardyno.weebly.com/ with more input options & logging.  
-
-Basically, it uses the Arduino's two interrupts to accuately record one or two channels of engine cycle events.  
-While the original Ardyno would use one signal from an inertia drum roller & one signal from the ignition system, this ArdynoMon can alternatively be used to get both signals from different parts of the ignition system.  
-
-# 2023-02-14 Revision 3.6 addresses all know issues.
-    After some external interest (thank you) I've been nudged into refreshing this page.  
-	I still get a bit lost with KiCAD files so if I've missed one from the upload, let me know.  
-    Amusingly, I have recently used it to check th timing of a minimal EVSE (EV charger) I've built.  
-
-# 2023-07-31 Don't use this version.
-

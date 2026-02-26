@@ -22,7 +22,7 @@ Another example used 3 separate PSUs.
 
 I have used a single 12V PSU with the output swing acheived by an H-bridge configuration. 
 This takes advantage of the fact that the PE (Protective Earth) of the car & the Earth from the mains, are not related to the 0V power rail of the electonics. This does mean than a fully isolated PSU is an ABSOLUTE requirement but it should be anyway. 
-In practice, I bought 3 different designs of the cheapest 12V PSU modules from AliExpress and all were good enough. 
+In practice, I bought the 3 cheapest different designs of 12V PSU modules from AliExpress and all were good enough. Two were under GBP 2.00  
 
 The CP signal also needs to follow a multi-stage protocol sequence to make the car happy enough to start drawing current.  
 As JL noted, his car was pretty tolerant of the sequence and a definitive specification for the timing of the sequence stages cannot be found online. This made me wonder how much more of the protocol sequence could be skipped. 
@@ -60,6 +60,7 @@ At this point I designed and ordered 5 PCBs which would fit within a single-modu
 Upon receiving the PCBs, I populated one with decent quality pin-through-hole (PTH) passives and good sockets for the ICs. It worked but took quite a while to trim the pots for a 13% duty cycle at 1kHz. I found it best to set the frequency pot to its centre then parallel timing capacitors to get it into the ball-park before trimming in. I found the car wouldn't stay charging for very long, even if I trimmed the 555 to start around 990Hz so that it was still below 1100Hz after settling.  
 
 Having fitted the PCB into a 1-mod DIN rail enclosure, I can see that an hour-glass shepped PCB would have a bit more space. Switching to surface-mount-devices (SMD) should enable enough space for a ground plane while also allowing better quality components. But this would detract from the DIY-friently aims.  
+
 
 
 

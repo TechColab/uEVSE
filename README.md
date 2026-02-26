@@ -41,12 +41,12 @@ I calculated that the maximum current needed from the CP signal is less than 20m
 
 The H-bridge output worked fine on my oscilloscope so I moved on to the next issue of duty cycle. I've never explored the duty-cycle quirks of the 555 so I did some research and found a circuit which allows extreme adjustment from 5 to 95% while also solving the issue of maintaining the frequency while adjusting the duty-cycle. I selected passive components and trim-pots for frequence & duty.  
 
-The first experiments with my car took a bit of manual fidelity but worked in both getting the car to draw some current and learning about the car's protocol expectations. Specifically:
-It did pay attention to the PP (Proximity Pilot) resistor being there (as JL found).
-It didn't seem to care if the mains was presented too early (as JL found).
-It didn't seem to like the 1kHz CP signal being present from the start.
-It does respond to the duty cycle as expected.
-I would like to find the minimum duty cycle the car will work at but I haven't yet.
+The first experiments with my car took a bit of manual fidelity but worked in both getting the car to draw some current and learning about the car's protocol expectations. Specifically:  
+It did pay attention to the PP (Proximity Pilot) resistor being there (as JL found).  
+It didn't seem to care if the mains was presented too early (as JL found).  
+It didn't seem to like the 1kHz CP signal being present from the start.  
+It does respond to the duty cycle as expected.  
+I would like to find the minimum duty cycle the car will work at but I haven't yet.  
 I did find that if the duty cycle is accidentally inverted, the 93% presented will cause the car to draw more than enough to trip my home battery before blowing the 13A fuse in the mains plug.  If you're in a country where the mains plugs don't include a fuse, take appropriate precautions.  
 
 While waiting for the special conectors to arrive from China, I bought the cheapest EVSE product I could find which included a timer function to make use of my over-night tariff. Disappointingly it can set a delay or a duration but not both. I later discovered that after a power-loss, it will return to the last used charge current and carry on. So I tried it via a Smart-switch rated at 16A and found it works fine with a schedule configred from the mobile app. I could have bought an EVSE without the built-in timer function. In fact this is the key to the cost-efficient upgrate path.  
@@ -60,6 +60,7 @@ At this point I designed and ordered 5 PCBs which would fit within a single-modu
 Upon receiving the PCBs, I populated one with decent quality pin-through-hole (PTH) passives and good sockets for the ICs. It worked but took quite a while to trim the pots for a 13% duty cycle at 1kHz. I found it best to set the frequency pot to its centre then parallel timing capacitors to get it into the ball-park before trimming in. I found the car wouldn't stay charging for very long, even if I trimmed the 555 to start around 990Hz so that it was still below 1100Hz after settling.  
 
 Having fitted the PCB into a 1-mod DIN rail enclosure, I can see that an hour-glass shepped PCB would have a bit more space. Switching to surface-mount-devices (SMD) should enable enough space for a ground plane while also allowing better quality components. But this would detract from the DIY-friently aims.  
+
 
 
 

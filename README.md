@@ -58,20 +58,17 @@ I think this is another case which shows that the 555 isn't really that good at 
 
 ## Feature ritch varient   
 I have used an ESP-01 in place of a 555 before so it seems a natural choice here. The pros and cons being as follows:  
- - Needs a 3.3V supply regulator  
- - Outputs are only 3.3V  
- - Very limited outputs, in terms of count and restrictions  
- - Needs driver IC with 3.3V inputs and 12V outputs  
- - No need for software development  
- + Does not need the op-amp  
  + Hopefully more accurate timing  
  + Better duty-cycle control: 0-100% without any impact on frequency  
  + Allows real-time control by mobile device, for duty-cycle, on/off, delay-start, duration-limit etc.  
  + Potential integration with Home Assistant etc.  
  + Easier to build the hardware  
+ + Does not need the op-amp  
  ~ Probably about the same size and cost
+ - Needs driver IC with 3.3V inputs and 12V outputs  
+ - Needs a 3.3V supply regulator  
+ - Outputs are only 3.3V  
+ - Very limited outputs, in terms of count and restrictions  
+ - Needs software development  
 
 To be continued.
-
-
-

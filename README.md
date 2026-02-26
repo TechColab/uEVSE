@@ -17,7 +17,7 @@ Staring with the excellent work by Julian Llett (JL) at https://www.youtube.com/
 
 The CP (Control Pilot) signal needs to be +/-12V or 24V peak-to-peak.  
 In the above example this is acheived with a pair of small 12V batteries which you won't find in your local supermarket. 
-Some others have used a dual output PSU with +12V & +5V for the electronics, with a DC-DC convreter to generate -12V. 
+Some others have used a dual output PSU with +12V & +5V for the electronics, with a DC-DC converter to generate -12V. 
 Another example used 3 separate PSUs.  
 
 I have used a single 12V PSU with the output swing acheived by an H-bridge configuration. 
@@ -60,6 +60,7 @@ At this point I designed and ordered 5 PCBs which would fit within a single-modu
 Upon receiving the PCBs, I populated one with decent quality pin-through-hole (PTH) passives and good sockets for the ICs. It worked but took quite a while to trim the pots for a 13% duty cycle at 1kHz. I found it best to set the frequency pot to its centre then parallel timing capacitors to get it into the ball-park before trimming in. I found the car wouldn't stay charging for very long, even if I trimmed the 555 to start around 990Hz so that it was still below 1100Hz after settling.  
 
 Having fitted the PCB into a 1-mod DIN rail enclosure, I can see that an hour-glass shepped PCB would have a bit more space. Switching to surface-mount-devices (SMD) should enable enough space for a ground plane while also allowing better quality components. But this would detract from the DIY-friently aims.  
+
 
 
 

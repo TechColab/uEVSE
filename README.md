@@ -64,11 +64,10 @@ I have used an ESP-01 in place of a 555 before so it seems a natural choice here
  + Potential integration with Home Assistant etc.  
  + Easier to build the hardware  
  + Does not need the op-amp  
- ~ Probably about the same size and cost
  - Needs driver IC with 3.3V inputs and 12V outputs  
  - Needs a 3.3V supply regulator  
- - Outputs are only 3.3V  
  - Very limited outputs, in terms of count and restrictions  
  - Needs software development  
 
-To be continued.
+Probably about the same size and cost.  
+To be continued.  

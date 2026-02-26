@@ -1,11 +1,3 @@
-2026-02-23
-NE555 starts at 975 Hz and quickly drifts up to 996 Hz at which point the car starts pulling current. 
-When freq reaches 1100 Hz, the car stops pulling current so presumably has tolerance of -1 to +10 %
-
-Q: Is this another case where the ESP-01 is better at simple timing tasks that the 555?
-
-
-
 # uEVSE or dumb little charger
 The minimally viable Electric Vehicle Supply Equipment. Mostly out of curiocity but also as a reaction to the relatively high prices of the cheapest available "Granny charger" products that might be your first step when charging your first BEV.  
 
@@ -60,25 +52,25 @@ At this point I designed a PCB which would fit within a single-module DIN rail e
 
 Upon receiving the PCBs, I populated one with decent quality pin-through-hole (PTH) passives and good sockets for the ICs. It worked better than the breadboard prototype did but hardly rock-steady. It took quite a while to trim the pots for a 13% duty cycle at 1kHz. I found it best to set the frequency pot to its centre then parallel timing capacitors to get it into the ball-park before trimming in. I found the car wouldn't stay charging for very long, even if I trimmed the 555 to start around 990Hz so that it was still below 1100Hz after settling.  
 
-Having fitted the PCB into a 1-mod DIN rail enclosure, I can see that an hour-glass shapped PCB would have a bit more space. Switching to surface-mount-devices (SMD) should enable enough space for a ground plane while also allowing better quality components. But this would detract from the DIY-friently aims.  
+Having fitted the PCB into a 1-mod DIN rail enclosure, I can see that an hour-glass shapped PCB would have a bit more space. Switching to surface-mount-devices (SMD) should enable enough space for a ground plane while also allowing better quality components. But this would detract from the DIY-friendly aims.  
 
+I think this is another case which shows that the 555 isn't really that good at basic timing! To know if this task is really beoyond the 555's capabilities, I need to further explore the timing tolerances of my car, with some accuracy. Probably the beast way to do this would be to build the feature-ritch variant anyway!  
 
+## Feature ritch varient   
+I have used an ESP-01 in place of a 555 before so it seems a natural choice here. The pros and cons being as follows:  
+- Needs a 3.3V supply regulator  
+- Outputs are only 3.3V  
+- Very limited outputs, in terms of count and restrictions  
+- Needs driver IC with 3.3V inputs and 12V outputs  
+- No need for software development  
++ Does not need the op-amp  
++ Hopefully more accurate timing  
++ Better duty-cycle control: 0-100% without any impact on frequency  
++ Allows real-time control by mobile device, for duty-cycle, on/off, delay-start, duration-limit etc.  
++ Potential integration with Home Assistant etc.  
++ Easier to build the hardware  
+~ Probably about the same size and cost
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+To be continued.
 
 

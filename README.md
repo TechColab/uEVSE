@@ -73,7 +73,8 @@ I have used an ESP-01 in place of a 555 before so it seems a natural choice here
 Probably about the same size and cost.  
 
 ## To do  
-I will look into the pin usage so I can use 2 pins to drive each part of the H-bridge separately and get a health dead-zone.  
+I will look into the pin usage so I can use 2 pins to drive each part of the H-bridge separately to get a good dead-zone.  
 I would like an input for user interaction, possibly via magnetic hall-switch to maintain IP65.  
 If there is stil a pin free, then I would put an addressable RGB LED on it, for user feedback.  
 To be continued.  
+

@@ -9,7 +9,7 @@ Q: Is this another case where the ESP-01 is better at simple timing tasks that t
 # uEVSE or dumb little charger
 The minimally viable Electric Vehicle Supply Equipment. Mostly out of curiocity but also as a reaction to the relatively high prices of the cheapest available "Granny charger" products that might be your first step when charging your first BEV.  
 
-In my exploration, the highest unavoidable component costs are the power cable and special connectors. You won't have much choice for the connectors and you really shouldn't compromise on the power cable either. When comparing prices, be sure they are the length you need with a save amount of slack.  
+In my exploration, the highest unavoidable component costs are the power cable and special connectors. You won't have much choice for the connectors and you really shouldn't compromise on the power cable either. When comparing prices, be sure they are the length you need with a safe amount of slack.  
 
 I've seen quite a few Arduino based projects to test a DIY EVSE but that still has an entry-level threshold of complexity that might put some people off. And I was confident I could make something better - in terms of minimalism.  
 
@@ -60,6 +60,7 @@ At this point I designed and ordered 5 PCBs which would fit within a single-modu
 Upon receiving the PCBs, I populated one with decent quality pin-through-hole (PTH) passives and good sockets for the ICs. It worked but took quite a while to trim the pots for a 13% duty cycle at 1kHz. I found it best to set the frequency pot to its centre then parallel timing capacitors to get it into the ball-park before trimming in. I found the car wouldn't stay charging for very long, even if I trimmed the 555 to start around 990Hz so that it was still below 1100Hz after settling.  
 
 Having fitted the PCB into a 1-mod DIN rail enclosure, I can see that an hour-glass shepped PCB would have a bit more space. Switching to surface-mount-devices (SMD) should enable enough space for a ground plane while also allowing better quality components. But this would detract from the DIY-friently aims.  
+
 
 
 

@@ -36,7 +36,7 @@ An upgrade path that doesn't waste earlier purchases.
 Not an end product but a kit to educate, and for those willing, form the base of their own functioning DIY EVSE.  
 
 ## Experimental evolution  
-Following the spec. at  https://en.wikipedia.org/wiki/SAE_J1772  my first thought regarding the 1kHz CP signal was that ""you could probably do that with a 555"" as it can run directly from 12V. 
+Following the spec. at  https://en.wikipedia.org/wiki/SAE_J1772  my first thought regarding the 1kHz CP signal was that "you could probably do that with a 555" as it can run directly from 12V. 
 I calculated that the maximum current needed from the CP signal is less than 20mA, if we drop the vented charging option. This is within the capability of an NE555P timer chip. But that only has one output when I need a complimentary pair of outputs to get a 24V swing from the 12V supply. A single buffer transistor wouldn't do as the output needs to both sink and source 20mA. I settled on using a cheap op-amp that suits.  
 
 The H-bridge output worked fine on my oscilloscope so I moved on to the next issue of duty cycle. I've never explored the duty-cycle quirks of the 555 so I did some research and found a circuit which allows extreme adjustment from 5 to 95% while also solving the issue of maintaining the frequency while adjusting the duty-cycle. I selected passive components and trim-pots for frequence & duty.  
@@ -60,6 +60,7 @@ At this point I designed and ordered 5 PCBs which would fit within a single-modu
 Upon receiving the PCBs, I populated one with decent quality pin-through-hole (PTH) passives and good sockets for the ICs. It worked but took quite a while to trim the pots for a 13% duty cycle at 1kHz. I found it best to set the frequency pot to its centre then parallel timing capacitors to get it into the ball-park before trimming in. I found the car wouldn't stay charging for very long, even if I trimmed the 555 to start around 990Hz so that it was still below 1100Hz after settling.  
 
 Having fitted the PCB into a 1-mod DIN rail enclosure, I can see that an hour-glass shepped PCB would have a bit more space. Switching to surface-mount-devices (SMD) should enable enough space for a ground plane while also allowing better quality components. But this would detract from the DIY-friently aims.  
+
 
 
 

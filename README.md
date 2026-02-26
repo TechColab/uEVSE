@@ -23,8 +23,9 @@ I have since succeded without a microcontroller at all, using just a 555 timer &
 ## Design decisions  
 I quickly decided I was going to follow two different paths - the pure minimal and the feature-ritch minimal which will be a separate project. The goals for this version are:  
 Drop the option for vented charging such as AGM batteries in golf buggies.  
-Fixed output at a modest rate no more than 10A.  
 Cheapest possible entry level that delivers the minimum viable function.  
+Fixed output at a modest rate no more than 10A.  
+Must connect to car before mains and disconnect mains before car.  
 An upgrade path that doesn't waste earlier purchases.  
 Not an end product but a kit to educate, and for those willing, form the base of their own functioning DIY EVSE.  
 
@@ -70,4 +71,9 @@ I have used an ESP-01 in place of a 555 before so it seems a natural choice here
  - Needs software development  
 
 Probably about the same size and cost.  
+
+## To do  
+I will look into the pin usage so I can use 2 pins to drive each part of the H-bridge separately and get a health dead-zone.  
+I would like an input for user interaction, possibly via magnetic hall-switch to maintain IP65.  
+If there is stil a pin free, then I would put an addressable RGB LED on it, for user feedback.  
 To be continued.  

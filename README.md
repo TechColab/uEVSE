@@ -39,7 +39,7 @@ Experimental evolution
 Following the spec. my first thought regarding the 1kHz CP signal was that ""you could probably do that with a 555"" as it can run directly from 12V. 
 I calculated that the maximum current needed from the CP signal is less than 20mA, if we drop the vented charging option. This is within the capability of an NE555P timer chip. But that only has one output when I need a complimentary pair of outputs to get a 24V swing from the 12V supply. A single buffer transistor wouldn't do as the output needs to sink and source 20mA. I settled on using a cheap op-amp that suits.  
 
-The H-bridge output worked fine on my osccilliscope so I moved on to the next issue of duty cycle. I've never explored the duty-cycle quirks of the 555 so I did some research and found a circuit which allows extreme adjustment from 5 to 95% while also solving the issue of adjusting the duty-cycle without changing the frequency. I selected passive components and trim-pots for frequence & duty.  
+The H-bridge output worked fine on my oscilloscope so I moved on to the next issue of duty cycle. I've never explored the duty-cycle quirks of the 555 so I did some research and found a circuit which allows extreme adjustment from 5 to 95% while also solving the issue of adjusting the duty-cycle without changing the frequency. I selected passive components and trim-pots for frequence & duty.  
 
 The first experiments with my car took a bit of manual fidelity but worked in both getting the car to draw some current and learning about the car's protocol expectations. Specifically:
 It did pay attention to the PP (Presence Pilot) resistor being there (as JL found).
@@ -47,10 +47,16 @@ It didn't seem to care if the mains was presented too early (as JL found).
 It didn't seem to like the 1kHz CP signal being present from the start.
 It does respond to the duty cycle as expected.
 I would like to find the minimum duty cycle it will work at but I haven't yet.
-I did find that if the duty cycle is inverted, the 93% presented will cause the car to draw more than enough to trip my home battery. 
+I did find that if the duty cycle is inverted, the 93% presented will cause the car to draw more than enough to trip my home battery before blowing the 13A fuse in the mains plug.  
 
-While waiting for the special conectors to arrive from China, I had bought the cheapest EVSE product I could find which included a timer function to make use of my over-night tariff. Dissapointingly it can set a delay or duration but not both. 
+While waiting for the special conectors to arrive from China, I had bought the cheapest EVSE product I could find which included a timer function to make use of my over-night tariff. Dissapointingly it can set a delay or duration but not both. I later discovered that after a power-loss, it will return to the last used charge current and carry on. So I tried it via a Smart-switch rated at 16A and found it works fine with a schedule configred from the mobile app. I could have bought an EVSE without the built-in timer function.  
 
-By looking at the signals from the bought EVSE on my oscilloscope, I thought mine probably needed the CP to be held at 12V+ for an initiual period before startinng the 1kHz square wave. As I used a dual op-amp chip, I could use the spare to hold the 555 in reset until a capacitor charged through a resistor, giving a couple of seconds delay. This worked perfectly.  
+By looking at the signals from the bought EVSE on my oscilloscope, I thought mine probably needed the CP to be held at 12V+ for an initiual period before startinng the 1kHz square wave. As I used a dual op-amp chip, I could use the spare to hold the 555 in reset until a capacitor charged through a resistor, giving a couple of seconds delay. This breadboard prototype sucesfully got the car to draw a controlled amount of current shortly after boot.  
+
+I also tried it with a (42xx?) driver IC to see if that would help square-off the rather imperfect signal edges. It didn't make much difference but the driver got rather hot. This was a dual complimemntary pair package where I was initially driving both inputs from the 555 so they had an brief cross-over period. I later tried a dual pair package where one was driven from the 555 and the other from the output of the op-amp inverter whose propogation delay was enough to avoud the over-lap heating.  
+
+
+
+
 
 

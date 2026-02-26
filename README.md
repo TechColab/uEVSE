@@ -52,7 +52,7 @@ I did find that if the duty cycle is accidentally inverted, the 87% presented wi
 
 While waiting for the special conectors to arrive from China, I bought the cheapest EVSE product I could find which included a timer function to make use of my over-night tariff. Disappointingly it can set a delay or a duration but not both. I later discovered that after a power-loss, it will return to the last used charge current and carry on. So I tried it via a Smart-switch rated at 16A and found it works fine with a schedule configred from the mobile app. I could have bought an EVSE without the built-in timer function. In fact this is the key to the cost-efficient upgrate path.  
 
-By looking at the signals from the bought EVSE on my oscilloscope, I thought mine probably needed the CP to be held at 12V+ for an initiual period before startinng the 1kHz square wave. As I used a dual op-amp chip, I could use the spare to hold the 555 in reset until a capacitor charged through a resistor, giving a couple of seconds delay. This breadboard prototype sucesfully got the car to draw a controlled amount of current shortly after boot.  
+By looking at the signals from the bought EVSE on my oscilloscope, I thought my circuit probably needed the CP to be held at 12V+ for an initiual period before startinng the 1kHz square wave. As I used a dual op-amp chip, I could use the spare to hold the 555 in reset until a capacitor charged through a resistor, giving a couple of seconds delay. This breadboard prototype sucesfully got the car to draw a controlled amount of current shortly after boot.  
 
 As an early experiment for the feature-ritch varient, I also tried it with a (42xx?) driver IC to see if that would help square-off the rather imperfect signal edges. It didn't make much difference but the driver got rather hot. This was a dual complimemntary pair package where I was initially driving both inputs from the 555 so they had a brief cross-over period. I later tried a dual matched pair package where one was driven from the 555 and the other from the output of the op-amp inverter whose propogation delay was enough to avoid the over-lap heating.  
 
@@ -61,6 +61,7 @@ At this point I designed and ordered 5 PCBs which would fit within a single-modu
 Upon receiving the PCBs, I populated one with decent quality pin-through-hole (PTH) passives and good sockets for the ICs. It worked but took quite a while to trim the pots for a 13% duty cycle at 1kHz. I found it best to set the frequency pot to its centre then parallel timing capacitors to get it into the ball-park before trimming in. I found the car wouldn't stay charging for very long, even if I trimmed the 555 to start around 990Hz so that it was still below 1100Hz after settling.  
 
 Having fitted the PCB into a 1-mod DIN rail enclosure, I can see that an hour-glass shepped PCB would have a bit more space. Switching to surface-mount-devices (SMD) should enable enough space for a ground plane while also allowing better quality components. But this would detract from the DIY-friently aims.  
+
 
 
 

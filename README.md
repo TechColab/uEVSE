@@ -53,7 +53,7 @@ At this point I designed a PCB which would fit within a single-module DIN rail e
 
 Upon receiving the PCBs, I populated one with decent quality pin-through-hole (PTH) passives and good sockets for the ICs. It worked better than the breadboard prototype did but hardly rock-steady. It took quite a while to trim the pots for a 13% duty cycle at 1kHz. I found it best to set the frequency pot to its centre then parallel timing capacitors to get it into the ball-park before trimming in. I found the car wouldn't stay charging for very long, even if I trimmed the 555 to start around 990Hz so that it was still below 1100Hz after settling.  
 
-Having fitted the PCB into a 1-mod DIN rail enclosure, I can see that an hour-glass shapped PCB would have a bit more space. Switching to surface-mount-devices (SMD) should enable enough space for a ground plane while also allowing better quality components. But this would detract from the DIY-friendly aims.  
+Having fitted the PCB into a 1-mod DIN rail enclosure, I can see that an hour-glass shapped PCB would have a bit more space. Switching to surface-mount-devices (SMD) should enable enough space for a ground plane while also allowing better quality components. But this would detract from the DIY-friendly aims. Meanwhile the Rev 0.2 PCB design is a mid-way improvement which allows the CP signal pair to be sent to and/or returned from a daughter board to either buffer or bypass the analogue ICs.   
 
 I think this is another case which shows that the 555 isn't really that good at basic timing! To know if this task is really beoyond the 555's capabilities, I need to further explore the timing tolerances of my car, with some accuracy. Probably the beast way to do this would be to build the feature-ritch variant anyway!  
 
@@ -77,4 +77,5 @@ I will look into the pin usage so I can use 2 pins to drive each part of the H-b
 I would like an input for user interaction, possibly via magnetic hall-switch to maintain IP65.  
 If there is stil a pin free, then I would put an addressable RGB LED on it, for user feedback.  
 To be continued.  
+
 

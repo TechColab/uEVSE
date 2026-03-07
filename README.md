@@ -5,7 +5,7 @@ In my exploration, the highest unavoidable component costs are the power cable a
 
 I've seen quite a few Arduino based DIY EVSE projects but that still has an entry-level threshold of complexity that might put some people off. And I was confident I could make something better - in terms of minimalism.  
 
-Staring with the excellent work by Julian Llett (JL) at https://www.youtube.com/watch?v=wdK0bfTGi6M&t=7s and other videos, I wanted to address the two biggest issues standing in the way of further simplification.  
+Staring with the excellent work by Julian Ilett (JI) at https://www.youtube.com/watch?v=wdK0bfTGi6M&t=7s and other videos, I wanted to address the two biggest issues standing in the way of further simplification.  
 
 The CP (Control Pilot) signal needs to be +/-12V or 24V peak-to-peak.  
 In the above example this is acheived with a pair of small 12V batteries which you won't find in your local supermarket. 
@@ -36,8 +36,8 @@ I calculated that the maximum current needed from the CP signal is less than 20m
 The H-bridge output worked fine on my oscilloscope so I moved on to the next issue of duty cycle. I've never explored the duty-cycle quirks of the 555 so I did some research and found a circuit which allows extreme adjustment from 5 to 95% while also solving the issue of maintaining the frequency while adjusting the duty-cycle. I selected passive components and trim-pots for frequence & duty.  
 
 The first experiments with my car took a bit of manual fidelity but worked in both getting the car to draw some current and learning about the car's protocol expectations. Specifically:  
-It did pay attention to the PP (Proximity Pilot) resistor being there (as JL found).  
-It didn't seem to care if the mains was presented too early (as JL found).  
+It did pay attention to the PP (Proximity Pilot) resistor being there (as JI found).  
+It didn't seem to care if the mains was presented too early (as JI found).  
 It didn't seem to like the 1kHz CP signal being present from the start.  
 It does respond to the duty cycle as expected.  
 I would like to find the minimum duty cycle the car will work at but I haven't yet.  
@@ -77,5 +77,6 @@ I will look into the pin usage so I can use 2 pins to drive each part of the H-b
 I would like an input for user interaction, possibly via magnetic hall-switch to maintain IP65.  
 If there is stil a pin free, then I would put an addressable RGB LED on it, for user feedback.  
 To be continued.  
+
 
 

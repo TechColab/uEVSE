@@ -45,9 +45,9 @@ I did find that if the duty cycle is accidentally inverted, the 87% presented wi
 
 While waiting for the special conectors to arrive from China, I bought the cheapest EVSE product I could find which included a timer function to make use of my over-night tariff. Disappointingly it can set a delay or a duration but not both. I later discovered that after a power-loss, it will return to the last used charge current and carry on. So I tried it via a Smart-switch rated at 16A and found it works fine with a schedule configred from the mobile app. I could have bought an EVSE without the built-in timer function. In fact this is the key to the cost-efficient upgrate path.  
 
-By looking at the signals from the bought EVSE on my oscilloscope, I thought my circuit probably needed the CP to be held at 12V+ for an initiual period before starting the 1kHz square wave. As I used a dual op-amp chip, I could use the spare to hold the 555 in reset until a capacitor charged through a resistor, giving a couple of seconds delay. This breadboard prototype sucesfully got the car to draw a controlled amount of current shortly after boot. Proof of concept!  
+By looking at the signals from the bought EVSE on my oscilloscope, I thought my circuit probably needed the CP to be held at 12V+ for an initiual period before starting the 1kHz square wave. As I used an LM358 dual op-amp chip, I could use the spare to hold the 555 in reset until a capacitor charged through a resistor, giving a couple of seconds delay. This breadboard prototype sucesfully got the car to draw a controlled amount of current shortly after boot. Proof of concept!  
 
-As an early experiment for the feature-ritch varient, I also tried it with a (42xx?) driver IC to see if that would help square-off the rather imperfect signal edges. It didn't make much difference but the driver got rather hot. This was a dual complimemntary pair package where I was initially driving both inputs from the 555 so they had a brief cross-over period. I later tried a dual matched pair package where one was driven from the 555 and the other from the output of the op-amp inverter whose propogation delay was enough to avoid the over-lap heating.  
+As an early experiment for the feature-ritch varient, I also tried it with 4423/4/8 driver ICs to see if that would help square-off the rather imperfect signal edges. It didn't make much difference but the driver got rather hot. This was a dual complimemntary pair package where I was initially driving both inputs from the 555 so they had a brief cross-over period. I later tried a dual matched pair package where one was driven from the 555 and the other from the output of the op-amp inverter whose propogation delay was enough to avoid the over-lap heating.  
 
 At this point I designed a PCB which would fit within a single-module DIN rail enclosure and ordered 5. While awaiting delivery, I did more testing and found the 555's timing to be pretty unstable. I programmed an Arduion to measure the mark and space periods from its interrupt pin and build up some statistics over an 8-hour period. It was quite alarming. I hoped this was mostly caused by the breadboard wiring as my PCB didn't have space for any ground plane.  
 
@@ -77,6 +77,7 @@ I will look into the pin usage so I can use 2 pins to drive each part of the H-b
 I would like an input for user interaction, possibly via magnetic hall-switch to maintain IP65.  
 If there is stil a pin free, then I would put an addressable RGB LED on it, for user feedback.  
 To be continued.  
+
 
 
 

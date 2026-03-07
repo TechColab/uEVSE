@@ -59,16 +59,16 @@ I think this is another case which shows that the 555 isn't really that good at 
 
 ## Feature ritch varient   
 I have used an ESP-01 in place of a 555 before so it seems a natural choice here. The pros and cons being as follows:  
- + Hopefully more accurate timing  
- + Better duty-cycle control: 0-100% without any impact on frequency  
- + Allows real-time control by mobile device, for duty-cycle, on/off, delay-start, duration-limit etc.  
- + Potential integration with Home Assistant etc.  
- + Easier to build the hardware  
- + Does not need the op-amp  
- - Needs driver IC with 3.3V inputs and 12V outputs  
- - Needs a 3.3V supply regulator  
- - Very limited outputs, in terms of count and restrictions  
- - Needs software development  
+ * + Hopefully more accurate timing  
+ * + Better duty-cycle control: 0-100% without any impact on frequency  
+ * + Allows real-time control by mobile device, for duty-cycle, on/off, delay-start, duration-limit etc.  
+ * + Potential integration with Home Assistant etc.  
+ * + Easier to build the hardware  
+ * + Does not need the op-amp  
+ * - Needs driver IC with 3.3V inputs and 12V outputs  
+ * - Needs a 3.3V supply regulator  
+ * - Very limited outputs, in terms of count and restrictions  
+ * - Needs software development  
 
 Probably about the same size and cost.  
 
@@ -77,6 +77,7 @@ I will look into the pin usage so I can use 2 pins to drive each part of the H-b
 I would like an input for user interaction, possibly via magnetic hall-switch to maintain IP65.  
 If there is stil a pin free, then I would put an addressable RGB LED on it, for user feedback.  
 To be continued.  
+
 
 
 

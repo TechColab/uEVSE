@@ -57,7 +57,7 @@ Having fitted the PCB into a 1-mod DIN rail enclosure, I can see that an hour-gl
 
 I think this is another case which shows that the 555 isn't really that good at basic timing! To know if this task is really beoyond the 555's capabilities, I need to further explore the timing tolerances of my car, with some accuracy. Probably the beast way to do this would be to build the feature-ritch variant anyway!  
 
-## Feature ritch varient   
+## Feature ritch varient  
 I have used an ESP-01 in place of a 555 before so it seems a natural choice here. The pros and cons being as follows:  
  * pro Hopefully more accurate timing  
  * pro Better duty-cycle control: 0-100% without any impact on frequency  
@@ -69,8 +69,13 @@ I have used an ESP-01 in place of a 555 before so it seems a natural choice here
  * con Needs a 3.3V supply regulator  
  * con Very limited outputs, in terms of count and restrictions  
  * con Needs software development  
-
 Probably about the same size and cost.  
+
+## ESP_EVSE first test  
+My mini ESP-01 prototype carrier board was ideal for this with the addition of a 3-pin 3.3V miniaturee DC-DC regulator and a couple of capacitors. Using a very simple Arduino sketch of little more than four delayMicroseconds() calls, this was immdiately more stablee than the 555. I just added a 4424 driver IC to the patch-bay area and the 1k resistor at the output to get it working. There are still the occasional drawn-out delays and it took a while to get the frequency and duty right but I was confident enough to let it on over-night. I had the duty set for about 6A and after 6h50m on the cheap tariff it had charged 8.89kWh. A success.  
+
+
+
 
 ## To do  
 I will look into the pin usage so I can use 2 pins to drive each part of the H-bridge separately to get a good dead-zone.  

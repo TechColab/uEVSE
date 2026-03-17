@@ -81,4 +81,5 @@ Uses hardware timer interupts for much more stable signal. Can use webapp on mob
 The pin0 button (for programming) is still usable for user interaction, possibly via magnetic hall-switch to maintain IP65.  
 I will look into the LED pin usage.  
 If there is stil a pin free, then I would put an addressable RGB LED on it, for user feedback.  
+The ESP-01 module is too wide for a single module DIN rail enclusure but I think I can get it to fit on its side. New PCB design to follow.  
 To be continued.  

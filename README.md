@@ -74,9 +74,11 @@ Probably about the same size and cost.
 ## ESP_EVSE first test  
 My mini ESP-01 prototype carrier board was ideal for this with the addition of a 3-pin 3.3V miniature DC-DC regulator and a couple of capacitors. I use the ESP-01S pin2 for the CP and pin1 for the complimentary PE after a deadband delay. It was a simple sketch with some serial debug then a loop of four delayMicroseconds() calls. This was immdiately more stable than the 555. I just added a 4424 driver IC to the patch-bay area and the 1k resistor at the output to get it working. There are still the occasional drawn-out delays and it took a while to get the frequency and duty right but I was confident enough to leave it on over-night. I had the duty set for about 6A and after 6h50m on the cheap tariff it had charged 8.89kWh. A success.  
 
+## ESP_EVSE feature build-out  
+Uses hardware timer interupts for much more stable signal. Can use webapp on mobile to change the duty-cycle while it's running. Has place-holders for start-delay and charge-duration. Settings saved in flash and loaded at boot. Captive AccessPoint to set your WiFi. Over-The-Air update needs testing. Yet to test lowest duty-cycle. Need to re-check it runs as expected from cold power-on. Much tidying to do, like making UI based on Amps translated to duty-cycle. Make the button do something. 
+
 ## To do  
-Write a new sketch to use interrupts from the hardware timer which should improve the stability and free-up the main loop for a web-app UI.  
 The pin0 button (for programming) is still usable for user interaction, possibly via magnetic hall-switch to maintain IP65.  
-I will look into the LED pin usage so I can use 2 pins to drive each part of the H-bridge separately to get a good dead-zone.  
+I will look into the LED pin usage.  
 If there is stil a pin free, then I would put an addressable RGB LED on it, for user feedback.  
 To be continued.  

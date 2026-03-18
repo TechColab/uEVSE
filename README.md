@@ -77,7 +77,11 @@ My mini ESP-01 prototype carrier board was ideal for this with the addition of a
 ## ESP_EVSE feature build-out  
 Uses hardware timer interupts for much more stable signal. Can use webapp on mobile to change the duty-cycle while it's running. Has place-holders for start-delay and charge-duration. Settings saved in flash and loaded at boot. Captive AccessPoint to set your WiFi. Over-The-Air update needs testing. Yet to test lowest duty-cycle. Need to re-check it runs as expected from cold power-on. Much tidying to do, like making UI based on Amps translated to duty-cycle. Make the button do something. 
 
+## ESP_EVSE more tweaks  
+The mDNS doesn't seem to be working so I have used the double-boot to blink our IP address (last byte). UI now sets current in Amps and code converts to duty-cycle. Output is now on GPIO1 & GPIO3 to free-up GPIO2 for blinking the new setting on each change.  
+
 ## To do  
+Need to change the setting so we dial to desired number, then comit. Rather than setting to each number on the way. 
 The pin0 button (for programming) is still usable for user interaction, possibly via magnetic hall-switch to maintain IP65.  
 I will look into the LED pin usage.  
 If there is stil a pin free, then I would put an addressable RGB LED on it, for user feedback.  

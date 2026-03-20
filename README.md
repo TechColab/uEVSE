@@ -80,10 +80,13 @@ Uses hardware timer interupts for much more stable signal. Can use webapp on mob
 ## ESP_EVSE more tweaks  
 The mDNS doesn't seem to be working so I have used the double-boot to blink our IP address (last byte). UI now sets current in Amps and code converts to duty-cycle. Output is now on GPIO1 & GPIO3 to free-up GPIO2 for blinking the new setting on each change.  
 
+## ESP_EVSE minimum test  
+I have wondered what the minimum power deliver is so I could considere a portable PV kit. The EVSE I bought doesn't go below 8A and I have read that there seems to be an unofficial minimal current limit of 6A. Now my DIY ESP_EVSE has live update by web-page, it was easy to test. My car will happily take 6A but if I set the duty-cycle to dictate a current limit of 5A, the car stops charging. After upping the limit to 6A again, the car started charging again. It would be interesting to know if the 6A limit is the same at lower voltages - E.g. 120V. My mains is often over 240V but assuming it works at 220V, that would be a minimum input of 1320W. Even if the same limit applies at 110V, that would mean the smallest portable generators of 600W would be too little. However, you should be able to run a common 2kVA generator at less than full throttle.  
+
 ## To do  
 Need to change the setting so we dial to desired number, then comit. Rather than setting to each number on the way. 
 The pin0 button (for programming) is still usable for user interaction, possibly via magnetic hall-switch to maintain IP65.  
-I will look into the LED pin usage.  
-If there is stil a pin free, then I would put an addressable RGB LED on it, for user feedback.  
+I'm aware of the security implications, so I could use pin0 to ensure that the web interface is ignored unless a magnet is present.  
+I will look into the LED pin usage. If there is stil a pin free, then I would put an addressable RGB LED on it, for user feedback.  
 The ESP-01 module is too wide for a single module DIN rail enclusure but I think I can get it to fit on its side. New PCB design to follow.  
 To be continued.  

@@ -89,4 +89,5 @@ The pin0 button (for programming) is still usable for user interaction, possibly
 I'm aware of the security implications, so I could use pin0 to ensure that the web interface is ignored unless a magnet is present.  
 I will look into the LED pin usage. If there is stil a pin free, then I would put an addressable RGB LED on it, for user feedback.  
 The ESP-01 module is too wide for a single module DIN rail enclusure but I think I can get it to fit on its side. New PCB design to follow.  
+Add support for remote control like Home Automation.  
 To be continued.  

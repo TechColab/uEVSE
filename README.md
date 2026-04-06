@@ -86,6 +86,15 @@ I have wondered what the minimum power deliver is so I could considere a portabl
 ## published  
 And added an initial PCB design for the ESP_EVSE.  
 
+## ESP_EVSE overenight test  
+During the minimum current test, The power monitoring smart socket showed the drawn current would vary a bit, perhaps related to variations in mains voltage among other things. This made me wonder if that was enough to make the car stop & start charging each time it dipped below 6A. So last night I put it on the timer for 00:10am till 05:50am at 6A set by the GUI. It started just below 6A but it did start. This morning I checked and it was drawing 5765mA at 237.6V until it stopped with a total of 8.94kWh logged. 8.94kWh / 6.67hours =~ 1341W  and  1341W / 237.6V =~ 5644mA  so the minimum is below 6A but above 5A. That's close enough for me.  
+
+Getting the current would enable an self-regulating mode where it could slowly decrease the duty-cycle until the car stops drawing, then increase again, while calculating a reliable averagee setting to just avoid drop-outs. This doesn't seem worth the effort. But I will start a simple list of cars and their discovered limits to see if this might be useful for others.
+
+A better use for knowing the current would be to optionaly stop the EVSE when the car reduces its draw below a certain amount. I.e. stop before full to preserve the battery's long-term health. My car has NMC chemistry so this would be nice. I would need to do full logging of the current over time as the car is charged to 100% with an EVSE setting of perhaps 10A. But at such a low current, it's possible that the car might only back-off its draw when it is so close to 100% that there's no significat difference.
+
+In either case I would need the ESP to know the curent. It doesn't have enough pins (without upgrading to a different module) but it could potentially read the current by WiFi from the smart plug. I will investigate further. Meanwhile I have ordered some hall-effect switches to test on the button. 
+ 
 ## To do  
 Need to change the setting so we dial to desired number, then comit. Rather than setting to each number on the way. 
 The pin0 button (for programming) is still usable for user interaction, possibly via magnetic hall-switch to maintain IP65.  

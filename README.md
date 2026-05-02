@@ -21,7 +21,7 @@ As JI noted, his car was pretty tolerant of the sequence and a definitive specif
 I have since succeded without a microcontroller at all, using just a 555 timer & an op-amp with a few resistors & capacitors. 
 
 ## Design decisions  
-I quickly decided I was going to follow two different paths - the pure minimal and the feature-ritch minimal which will be a separate project. The goals for this version are:  
+I quickly decided I was going to follow two different paths - the pure minimal and the feature-ritch minimal in the same project. The goals for this version are:  
 Drop the option for vented charging such as AGM batteries in golf buggies.  
 Cheapest possible entry level that delivers the minimum viable function.  
 Fixed output at a modest rate no more than 10A.  

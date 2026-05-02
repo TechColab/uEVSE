@@ -17,7 +17,7 @@ This takes advantage of the fact that the PE (Protective Earth) of the car & the
 In practice, I bought the 3 cheapest different designs of 12V PSU modules from AliExpress and all were good enough. Two were under GBP 2.00  
 
 The CP signal also needs to follow a multi-stage protocol sequence to make the car happy enough to start drawing current.  
-As JL noted, his car was pretty tolerant of the sequence and a definitive specification for the timing of the sequence stages cannot be found online anyway. This made me wonder how much more of the protocol sequence could be skipped. 
+As JI noted, his car was pretty tolerant of the sequence and a definitive specification for the timing of the sequence stages cannot be found online anyway. This made me wonder how much more of the protocol sequence could be skipped. 
 I have since succeded without a microcontroller at all, using just a 555 timer & an op-amp with a few resistors & capacitors. 
 
 ## Design decisions  

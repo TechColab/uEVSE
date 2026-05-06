@@ -95,6 +95,9 @@ A better use for knowing the current would be to optionaly stop the EVSE when th
 
 In either case I would need the ESP to know the curent. It doesn't have enough pins (without upgrading to a different module) but it could potentially read the current by WiFi from the smart plug. I will investigate further. Meanwhile I have ordered some hall-effect switches to test on the button. 
  
+## End times  
+I've just charged the car to 100% for the first time with the ESP_EVSE and 5 minutes before the end of the cheap rate, I checked the current on the smart-switch. It was a little over 4A so a significant enough drop to be detected and used. I will have to get some logging to chart how long before full it backs-off. A good excuse to finally get round to Home Assistant. If the drop from 6A is too close to 100% then I could perhaps try something like every 15 minutes, doing a 30 second burst of PWM offering 12A to see what the car does before returning to 6A. If the car draws less than 12A, then I would note what it did draw, and stop charging. Then check on the car's state of charge. 
+
 ## To do  
 Need to change the setting so we dial to desired number, then comit. Rather than setting to each number on the way. 
 The pin0 button (for programming) is still usable for user interaction, possibly via magnetic hall-switch to maintain IP65.  
